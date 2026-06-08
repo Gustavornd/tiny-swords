@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bh48w2waj5q18"]
+
+[ext_resource type="PackedScene" uid="uid://dvcyydlvbyd70" path="res://enemies/purple_torch.tscn" id="1_7n82v"]
+
+[node name="TestTorch" type="Node2D" unique_id=1970520776]
+
+[node name="PurpleTorch" parent="." unique_id=738393194 instance=ExtResource("1_7n82v")]
+position = Vector2(257, 263)

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://rdw3ak2lm5ir"]
+
+[ext_resource type="PackedScene" uid="uid://dnve6cg57th1u" path="res://misc/dead.tscn" id="1_d131r"]
+
+[node name="Dead" unique_id=1977623684 instance=ExtResource("1_d131r")]
+position = Vector2(0, 20)
