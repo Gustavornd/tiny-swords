@@ -22,25 +22,31 @@ func play_run_idle_animation() -> void:
 				sprite.play("idle")
 
 func _physics_process(_delta: float) -> void:
-	
 	# Calcular Direção
 	var player_position = GameManager.player_position
 	var difference = player_position - enemy.position
 	var input_vector = difference.normalized()
 	
-	# Andar
-	enemy.velocity = input_vector * speed * 100
-	enemy.move_and_slide()
-	
-	# Atualizar o is_running
-	was_running = is_running
-	is_running = not input_vector.is_zero_approx()
-	play_run_idle_animation()
+	if GameManager.have_player:
+		
+		# Andar
+		enemy.velocity = input_vector * speed * 100
+		enemy.move_and_slide()
+		
+		# Atualizar o is_running
+		was_running = is_running
+		is_running = not input_vector.is_zero_approx()
+		play_run_idle_animation()
 
-	#Girar sprite
-	if input_vector.x > 0:
-		# Desmarcar o Flip_H do Sprite2D
-		sprite.flip_h = false
-	elif input_vector.x < 0:
-		# Marcar o Flip_H do Sprite2D
-		sprite.flip_h = true
+		#Girar sprite
+		if input_vector.x > 0:
+			# Desmarcar o Flip_H do Sprite2D
+			sprite.flip_h = false
+		elif input_vector.x < 0:
+			# Marcar o Flip_H do Sprite2D
+			sprite.flip_h = true
+	else:
+		was_running = is_running
+		is_running = not input_vector.is_zero_approx()
+		sprite.play("idle")
+		return

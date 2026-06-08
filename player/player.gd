@@ -134,6 +134,7 @@ func die() -> void:
 		var death_object = death_prefab.instantiate()
 		death_object.position = position
 		get_parent().add_child(death_object)
+		GameManager.have_player = false
 		
 		
 	queue_free()
