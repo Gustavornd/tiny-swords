@@ -1,11 +1,13 @@
+class_name Player
 extends CharacterBody2D
 
 @export var speed: float = 2
-@export var lerp_factor: float = 0.15
+@export var lerp_factor: float = 0.50
 @export var controller_deadzone: float = 0.15
 @export var sword_damage: int = 2
 @export var attack_range: float = 0.45
 @export var health: int = 100
+@export var max_health: int = 100
 @export var death_prefab: PackedScene
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -139,6 +141,14 @@ func die() -> void:
 		
 	queue_free()
 
+func heal(amount: int) -> int:
+	health += amount
+	if (health >= max_health):
+		health = max_health
+	print("Player recebeu cura de ", amount, ". A vida total é de ", health,"/",max_health)
+	return health
+	
+
 func update_hitbox_detection(delta: float) -> void:
 	# Temporizador
 	hitbox_cooldown -= delta
@@ -151,7 +161,6 @@ func update_hitbox_detection(delta: float) -> void:
 	var bodies = hitbox_area.get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("enemies"):
-			var enemy: Enemy = body
 			var damage_amount = 10
 			damage(damage_amount)
 

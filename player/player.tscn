@@ -256,9 +256,10 @@ radius = 131.00381
 [sub_resource type="CircleShape2D" id="CircleShape2D_g1dw6"]
 radius = 76.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1569820950]
+[node name="Player" type="CharacterBody2D" unique_id=1569820950 groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_rkbax")
+speed = 3.0
 death_prefab = ExtResource("2_g1dw6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1169978444]

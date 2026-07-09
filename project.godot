@@ -25,6 +25,7 @@ project/assembly_name="Tiny Swords"
 [global_group]
 
 enemies=""
+player=""
 
 [input]
 
