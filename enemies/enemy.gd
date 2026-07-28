@@ -3,8 +3,9 @@ extends Node2D
 
 @export var health: int = 10
 @export var death_prefab: PackedScene
+@export var damage: int = 5
 
-func damage(amount: int)-> void:
+func receive_damage(amount: int)-> void:
 	health -= amount
 	print("Inimigo recebeu dano de: ", amount, " e agora tem ", health, " de vida.")
 	

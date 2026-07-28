@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dymp0pmvbttkq"]
+
+[ext_resource type="Script" uid="uid://cpq0w4d7etkm6" path="res://systems/mob_spawner.gd" id="1_4fixq"]
+[ext_resource type="PackedScene" uid="uid://dvcyydlvbyd70" path="res://enemies/purple_torch.tscn" id="2_3hnfx"]
+[ext_resource type="PackedScene" uid="uid://c5b1ua35n4slx" path="res://enemies/tnt.tscn" id="3_gcui7"]
+
+[sub_resource type="Curve2D" id="Curve2D_lbqwk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -389, -538, 0, 0, 0, 0, 891, -496, 0, 0, 0, 0, 935, 338, 0, 0, 0, 0, -381, 330, 0, 0, 0, 0, -389, -538)
+}
+point_count = 5
+
+[node name="MobSpawner" type="Node2D" unique_id=864213784]
+script = ExtResource("1_4fixq")
+creatures = Array[PackedScene]([ExtResource("2_3hnfx"), ExtResource("3_gcui7")])
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1145617856]
+curve = SubResource("Curve2D_lbqwk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=541691862]
+unique_name_in_owner = true
+position = Vector2(-389, -538)
+rotation = 0.032800734

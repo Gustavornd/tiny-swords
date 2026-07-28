@@ -98,5 +98,5 @@ position = Vector2(476, 272)
 speed = 5.0
 lerp_factor = 0.1
 
-[node name="PurpleTorch3" parent="." unique_id=666751456 groups=["enemies"] instance=ExtResource("3_htmfu")]
+[node name="PurpleTorch3" parent="." unique_id=666751456 instance=ExtResource("3_htmfu")]
 position = Vector2(950, 281)

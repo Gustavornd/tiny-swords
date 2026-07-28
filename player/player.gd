@@ -83,7 +83,7 @@ func deal_damage_to_enemies() -> void:
 			var direction_to_enemy =(enemy.position - position).normalized()
 			var dot_product = direction_to_enemy.dot(attack_direction)
 			if dot_product >= 0.45:
-				enemy.damage(sword_damage)
+				enemy.receive_damage(sword_damage)
 
 # Executa as animações de ataque de acordo com a direção
 func attack(direction: Vector2) -> void:
@@ -114,7 +114,7 @@ func attack(direction: Vector2) -> void:
 	# Indica que o ataque está ocorrendo
 	is_attacking = true
 
-func damage(amount: int)-> void:
+func receive_damage(amount: int)-> void:
 	if health <= 0: return
 	
 	health -= amount
@@ -161,8 +161,8 @@ func update_hitbox_detection(delta: float) -> void:
 	var bodies = hitbox_area.get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("enemies"):
-			var damage_amount = 10
-			damage(damage_amount)
+			var damage_amount = body.damage
+			receive_damage(damage_amount)
 
 func _process(delta: float) -> void:
 	

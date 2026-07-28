@@ -358,7 +358,7 @@ animations = [{
 radius = 17.0
 height = 62.0
 
-[node name="PurpleTorch" type="CharacterBody2D" unique_id=738393194]
+[node name="PurpleTorch" type="CharacterBody2D" unique_id=738393194 groups=["enemies"]]
 motion_mode = 1
 script = ExtResource("1_h0nk0")
 death_prefab = ExtResource("2_208ha")
@@ -371,7 +371,6 @@ autoplay = "idle"
 frame_progress = 0.33143798
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=631357562]
-visible = false
 position = Vector2(0, -31)
 shape = SubResource("CapsuleShape2D_w6twy")
 

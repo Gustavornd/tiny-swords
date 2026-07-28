@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b1svf1sh5qg23"]
+
+[ext_resource type="PackedScene" uid="uid://d3hljvy0ywc68" path="res://player/player.tscn" id="1_3w2t4"]
+[ext_resource type="PackedScene" uid="uid://dymp0pmvbttkq" path="res://systems/mob_spawner.tscn" id="2_lbqwk"]
+[ext_resource type="PackedScene" uid="uid://bq0k67j3250x6" path="res://misc/ritual.tscn" id="3_c7cnd"]
+
+[node name="TestMobSpawning" type="Node2D" unique_id=348568523]
+
+[node name="Player" parent="." unique_id=1569820950 instance=ExtResource("1_3w2t4")]
+position = Vector2(338, 364)
+
+[node name="MobSpawner" parent="." unique_id=864213784 instance=ExtResource("2_lbqwk")]
+position = Vector2(338, 404)
+
+[node name="Ritual" parent="." unique_id=1695769009 instance=ExtResource("3_c7cnd")]
+position = Vector2(348, 326)
+scale = Vector2(1.5, 1.5)
